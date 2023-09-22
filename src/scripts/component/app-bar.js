@@ -11,21 +11,40 @@ class AppBar extends HTMLElement {
   render() {
     this.seaDom.innerHTML = `
 <style>
-h1{
-text-align: center;
-
+*{
+margin: 0;
+padding: 0;
 }
+:host{
+display: block;
+  position: fixed;
+  z-index: 1000;
+width: 100%;
+height: 55px;
+background-color: #183D3D;
+}
+h1{
+position: absolute;
+left: 30px;
+color: #5a8172;
+}
+span{
+color: #93B1A6;
+}
+            @media (max-width: 768px) {
+            h1{
+            margin-top: 7px;
+            left: 7px;
+            font-size: 25px;
+            }
+             @media(max-width:330px ){
+ h1{font-size: 15px;}
+ :host{
+ height: 40px;}
+ }
+ }
 </style>
-<link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"/>   
-<div class="container">
-    <div class="row mt-5">
-        <div class="col">
-            <h1>Movies Online</h1>
-        </div>
-    </div>
-</div>
+            <h1><i>Mov<span>Free.</span></i></h1>
             `;
   }
 }
