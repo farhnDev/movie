@@ -1,16 +1,24 @@
 class SearchInput extends HTMLElement {
-    constructor() {
-        super();
-        this.searchDom = this.attachShadow({mode: 'open'});
-    }
+  constructor() {
+    super();
+    this.searchDom = this.attachShadow({ mode: "open" });
+  }
 
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render() {
-        this.searchDom.innerHTML =
-            ` 
+  set clickEvent(event) {
+    this._clickEvent = event;
+    this.render();
+  }
+
+  get value() {
+    return this.searchDom.querySelector(".input-keyword").value;
+  }
+
+  render() {
+    this.searchDom.innerHTML = ` 
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"/>            
@@ -26,8 +34,11 @@ class SearchInput extends HTMLElement {
                 </div>
             </div>
             </div>
-            `
-    }
+            `;
+    this.searchDom
+      .querySelector(".search-button")
+      .addEventListener("click", this._clickEvent);
+  }
 }
 
 customElements.define("search-bar", SearchInput);

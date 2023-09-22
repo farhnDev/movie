@@ -1,6 +1,7 @@
-import "./src/scripts/components/app-bar.js";
-import './src/scripts/components/search-input.js';
+// import './src/styles/style.css';
+import "./src/scripts/component/app-bar.js";
+import "./src/scripts/component/search-input.js";
 import main from "./src/scripts/view/main.js";
 
-document.addEventListener('DOMContentLoaded', main);
+document.addEventListener("DOMContentLoaded", main);
 
