@@ -28,6 +28,7 @@ class MovList extends HTMLElement {
       const movItemElement = document.createElement("movie-item");
       movItemElement.movie = movie;
       movItemElement.innerHTML = `
+
       <style>
             :host {
                 display: grid;
@@ -36,7 +37,23 @@ class MovList extends HTMLElement {
                 overflow: hidden;
             }
       }
-      </style>`;
+:host {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px; 
+    overflow: hidden;
+}
+
+movie-item {
+    width: 300%; 
+    height: 300%; 
+}
+@media (max-width: 768px) {
+movie-item{
+width: 100%;
+}
+
+}</style>`;
       this.listDom.appendChild(movItemElement);
     });
   }

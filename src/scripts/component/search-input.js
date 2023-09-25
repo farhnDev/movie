@@ -22,6 +22,7 @@ class SearchInput extends HTMLElement {
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"/>            
+
  <style>
  *{
  margin:0;
@@ -113,9 +114,7 @@ margin-top: 15%;
       .querySelector(".input-keyword")
       .addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
-          // Cek apakah tombol yang ditekan adalah "Enter"
           if (this._clickEvent) {
-            // Jika event click telah ditetapkan, panggil fungsi pencarian
             this._clickEvent();
           }
         }
